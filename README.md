@@ -1,6 +1,6 @@
 # Jarvis the Nutritionist - Wit version
 
-This a test version of *Jarvis-the-nutritionist* with a [wit.ai](https://wit.ai) integration and using [pywit](https://github.com/wit-ai/pywit), a Python library for wit.
+This is a test version of *Jarvis-the-nutritionist* with a [wit.ai](https://wit.ai) integration using [pywit](https://github.com/wit-ai/pywit), a Python library for wit.
 
 ## Installation
 
@@ -20,19 +20,33 @@ Install dependencies
 
 ## Run
 
-It is possible to run the program in an terminal to test the commands directly with [wit.ai](https://wit.ai) or to test it on Messenger.
+It is possible to run the bot in two different ways:
+
+- in a terminal to test the commands directly with [wit.ai](https://wit.ai)
+- on Facebook Messenger to test the full experience
+
+For both of these, you have to copy the `.env.bk` file and name it `.env`. Then edit the `.env` file and write the correct tokens.
+
+The variables in this file have to be on your environment variables. To add them on Linux, type :
+
+    export $(cat .env)
+
 
 ### In Terminal
 
-To run the bot in interactive mode in the terminal, just launch the python file `bot.py` with the following command :
+To run the bot in interactive mode in the terminal, `terminal_mode` variable (line 8 of bot.py) must be set to `True`. Then just launch the python file `bot.py` with the following command :
 
-    python bot.py [WIT APP SERVER ACCESS TOKEN]
+    python bot.py
 
 
 ### On Messenger
 
-To use it directly on Messenger, you need to setup a Facebook page first.
+To use it directly on Messenger, set the `terminal_mode` to `False`. Then you need to setup a Facebook page first. You can follow the [Messenger Platform setup guide](https://developers.facebook.com/docs/messenger-platform/quickstart).
 
-*--- explanation in progress ---*
+After setting up the page, run the bot with :
 
-After setting up the page, create a en var0
+    python bot.py
+
+Then you have to subscribe your page to the webhook `https://<your_host>/webhook` (note: you must have a valid SSL certificate).
+
+Hint : you can use [ngrok](https://ngrok.com), to test in localhost.
