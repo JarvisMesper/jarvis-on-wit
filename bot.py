@@ -3,8 +3,7 @@ import requests
 from wit import Wit
 from bottle import Bottle, request, debug
 
-from actions import forecast
-from actions import openfood
+from actions import forecast, product
 
 terminal_mode = True
 
@@ -100,9 +99,10 @@ def send(request, response):
 
 
 actions = {
+    # [name in Wit]: [function in python code],
     'send': send,
     'getForecast': forecast.get_forecast,
-    'getOpenFoodInfo': openfood.getOpenFoodInfo,
+    'getProductInfo': product.get_info
 }
 
 client = Wit(access_token=WIT_TOKEN, actions=actions)

@@ -50,3 +50,10 @@ After setting up the page, run the bot with :
 Then you have to subscribe your page to the webhook `https://<your_host>/webhook` (note: you must have a valid SSL certificate).
 
 Hint : you can use [ngrok](https://ngrok.com), to test in localhost.
+
+
+## Contribute
+
+It is possible to contribute !
+
+Please follow the [PEP8](https://www.python.org/dev/peps/pep-0008/) code convention ;)
