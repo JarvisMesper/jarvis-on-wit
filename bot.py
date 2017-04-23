@@ -84,7 +84,6 @@ def send(request, response):
     """
     Sender function
     """
-    print('--- send called ---')
     #print(request)
     #print(response)
 
@@ -102,7 +101,8 @@ actions = {
     # [name in Wit]: [function in python code],
     'send': send,
     'getForecast': forecast.get_forecast,
-    'getProductInfo': product.get_info
+    'getProductInfo': product.get_info,
+    'containsIngredient': product.contains_ingredient
 }
 
 client = Wit(access_token=WIT_TOKEN, actions=actions)

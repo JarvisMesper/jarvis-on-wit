@@ -9,3 +9,9 @@ def first_entity_value(entities, entity):
     if not val:
         return None
     return val['value'] if isinstance(val, dict) else val
+
+def get_from_context_or_entities(context, entities, entity):
+	if entity in context:
+		return context[entity]
+	else:
+		return first_entity_value(entities, entity)
